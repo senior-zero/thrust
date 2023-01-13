@@ -958,6 +958,7 @@ void run_core_primitives_experiments_for_type()
     , RegularTrials
   >::run_experiment();
 
+  /*
   experiment_driver<
     transform_inplace_tester
     , ElementMetaType
@@ -999,6 +1000,7 @@ void run_core_primitives_experiments_for_type()
     , BaselineTrials
     , RegularTrials
   >::run_experiment();
+  */
 }
 
 ///////////////////////////////////////////////////////////////////////////////
@@ -1030,12 +1032,15 @@ template <
 >
 void run_core_primitives_experiments()
 {
+#if 0
   run_core_primitives_experiments_for_type<
     char_meta,    Elements, BaselineTrials, RegularTrials
   >();
+#endif
   run_core_primitives_experiments_for_type<
     int_meta,     Elements, BaselineTrials, RegularTrials
   >();
+#if 0
   run_core_primitives_experiments_for_type<
     int8_t_meta,  Elements, BaselineTrials, RegularTrials
   >();
@@ -1054,6 +1059,7 @@ void run_core_primitives_experiments()
   run_core_primitives_experiments_for_type<
     double_meta,  Elements, BaselineTrials, RegularTrials
   >();
+#endif
 }
 
 ///////////////////////////////////////////////////////////////////////////////
@@ -1264,7 +1270,7 @@ int main(int argc, char** argv)
 //run_core_primitives_experiments< 1LLU << 24LLU      , 4        , 16      >();
 //run_core_primitives_experiments< 1LLU << 25LLU      , 4        , 16      >();
   run_core_primitives_experiments< 1LLU << 26LLU      , 4        , 16      >();
-  run_core_primitives_experiments< 1LLU << 27LLU      , 4        , 16      >();
+//run_core_primitives_experiments< 1LLU << 27LLU      , 4        , 16      >();
 //run_core_primitives_experiments< 1LLU << 28LLU      , 4        , 16      >();
 //run_core_primitives_experiments< 1LLU << 29LLU      , 4        , 16      >();
 
